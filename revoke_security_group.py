@@ -1,7 +1,7 @@
 import json, os, boto3
 
 def lambda_handler(event, context):
-   if 'detail' not in event or ('detail' in event and 'eventName' not in event['detail']):
+    if 'detail' not in event or ('detail' in event and 'eventName' not in event['detail']):
         return {"Result": "Failure", "Message": "Lambda not triggered by an event"}
     
     if(event['detail']['eventName'] == 'AuthorizeSecurityGroupIngress'):
